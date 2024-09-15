@@ -1,7 +1,7 @@
 // import React from "react"
 // import Products from "../components/Productss"
 // import { useProduct } from "../context/products"
-
+import { Navigate } from 'react-router-dom';
 
 
 const Emazon = () => {

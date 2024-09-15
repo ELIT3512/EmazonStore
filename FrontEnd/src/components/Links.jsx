@@ -1,23 +1,25 @@
 import React from "react";
 import Link from "./Link";
-// import {useAuth} from "../context/auth";
-
+import {useAuth} from "../context/auth";
 const Links = () => {
-//   const {isAuthenticated} = useAuth();
+  const {isAuth} = useAuth();
  return(
   <>
-  <Link path="/" title="Emazon Shop" />
-  <Link path="/share" title="Post" />
-  <Link path="/profile" title="Profile" />
-  <Link path="/register" title="Register" />
-  <Link path="/login" title="Login" />
-  </>
-
-
+  {!isAuth&&(
+    <>
+    <Link path="/" title="Emazon Shop" />
+    <Link path="/register" title="Register"/>
+    <Link path="/login" title="Login" />
+    </>
+  )}
+  {isAuth&&(
+    <>
+    <Link path="/" title="Emazon Shop" />
+    <Link path="/share" title="Post" />
+    <Link path="/profile" title="Profile" />
+    </>
+  )}
+     </>
  )
-          
-
-
 };
-
 export default Links;

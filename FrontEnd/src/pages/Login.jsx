@@ -1,19 +1,17 @@
 import {useState} from 'react'
-// import { useAuth } from '../context/auth'
+import { useAuth } from '../context/auth'
 import {useNavigate} from 'react-router-dom'
 const Login = () => {
     const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  // // const {login, setIsAuth} = useAuth()
-  const navigate = useNavigate()
-  const submitHandler = (e)=>{
+    const [password, setPassword] = useState('')
+    const {login} = useAuth()
+    const navigate = useNavigate()
+    const submitHandler = (e)=>{
     e.preventDefault();
     if(!username|| !password )
       alert('Please fill in the form ')
-       Login({username, password})
-    // setIsAuth(true)
-   
-    navigate('/')
+       login({username, password})
+       navigate("/");
   }
   return (
     <div className="Login">
