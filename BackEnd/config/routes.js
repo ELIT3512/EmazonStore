@@ -1,6 +1,6 @@
 const { auth } = require('../utils/index');
 const router = require('../routes/index.js');
-const user = require("../models/User.js")
+
 module.exports = (app) => {
 
     app.use('/api/user', router.user);
