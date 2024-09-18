@@ -2,7 +2,7 @@ import Links from "./Links";
 
 const Navigation = () => {
   return (
-    <nav className="Navigation">
+    <nav className="nav-container">
       <ul>
         <Links/>
       </ul>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const product = require('../models/Product');
+const Product = require('../models/Product');
 const saltRounds = 10;
 const Schema = mongoose.Schema;
 const model = mongoose.model;
@@ -13,12 +13,19 @@ const userSchema = new Schema({
     },password: {
         type: String,
         require: true
-    },productsForSale:[{
-        product:{type:Schema.Types.ObjectId,ref:"product"}
-    }],balance:{
+    },
+    image:{
+        type:String
+    },
+    productsForSale:[{
+        type:Schema.Types.ObjectId,
+        ref:"Product"
+    }],
+        balance:{
         type:Number,
         default:0
-    }});userSchema.methods = {
+    }});
+    userSchema.methods = {
     matchPassword: function (password) {
         return bcrypt.compare(password, this.password);
     }};userSchema.pre('save', function (next) {

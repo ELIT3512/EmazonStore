@@ -12,17 +12,18 @@ const Login = () => {
       alert('Please fill in the form ')
        login({username, password})
        navigate("/");
+       
   }
   return (
     <div className="Login">
     <h1>Login Page</h1>
     <form onSubmit={submitHandler}>
     <div className="form-control">
-          <label htmlFor="">Email</label>
+          <label htmlFor="">Email:  </label>
           <input type="email"  id="email" name="username" value={username} onChange={(e)=>setUsername(e.target.value)}/>
         </div>
         <div className="form-control">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password:  </label>
           <input type="password"  id="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
         </div>
           <div className="form-control">

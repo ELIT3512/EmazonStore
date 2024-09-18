@@ -19,7 +19,11 @@ const productSchema = new Schema({
     image:{
         type:String
     },
-    seller: {
+    PostTime: { // New PostTime field
+        type: Date,
+        default: Date.now // Automatically set to current date and time when a new product is created
+    },
+    owner: {
             type:Schema.Types.ObjectId,
             ref: "User",
             default:null
@@ -32,4 +36,4 @@ const productSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('Prodcut', productSchema);
+module.exports = mongoose.model('Product', productSchema);
