@@ -13,12 +13,12 @@ const {userData, fetchUserData} = useUser();
   useEffect(()=>{
     fetchUserData();
   },[]);
-  useEffect(() => {
-    if(userData){
-      setCurrentUser(userData);
-    }
-  },[userData]);
   
+  useEffect(()=>{
+    if(userData){
+      setCurrentUser(userData)
+    }
+  },[userData])
   
   const handleLogout = ()=>{
     logout()
@@ -26,21 +26,30 @@ const {userData, fetchUserData} = useUser();
   }
   return (
     <div className="Profile">
-    <img src="https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-png-image_3918418.jpg" alt="profile-icon" />
-    <div className="personal-info">
-      <p><span>Email: </span> {currentUser?.username} </p>
-      <p><span>Products: </span>{currentUser?.products?.length} </p>
+      <img src="https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-png-image_3918418.jpg" alt="profile-icon" />
+      <div className="personal-info">
+        <p><span>Email: </span> {currentUser?.username} </p>
+        <p><span>Products: </span>{currentUser?.productsForSale?.length} </p>
+        <p><span>Balance: ${currentUser?.balance} </span></p>
+        
+        
+      </div>
+      <div>
+        <h2>Your Recent Products</h2>
+        {currentUser?.productsForSale?.length > -1 ? (
+          currentUser.productsForSale.slice(-3).reverse().map((product, index) => (
+            <div key={index} className="product-item">
+              <h3>Title: {product.title}</h3>
+              <p>Description: {product.description}</p>
+              <p>Price: ${product.price}</p>
+            </div>
+          ))
+        ) : (
+          <p>No products available.</p>
+        )}
+      </div>
       <button onClick={handleLogout}>Logout</button>
     </div>
-    <div>
-      <h2>3 of your recent posts</h2>
-      {/* Assuming you will handle displaying the last 3 products or posts */}
-      {/* <Products products={currentUser?.products?.slice(-3).reverse()} /> */}
-    </div>
-    {/* Example update section */}
-    {/* This is where you would create forms or options for users to update their profile */}
-    {/* <button onClick={() => handleUpdateUser(updatedUserData)}>Update Profile</button> */}
-  </div>
   )
 
 }

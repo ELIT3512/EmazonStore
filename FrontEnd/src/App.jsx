@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Share from "./pages/Share";
 import NotFound from "./pages/NotFound";
 import { useAuth } from "./context/auth";
+import './index.css';
 
 const App = () => {
 

@@ -1,0 +1,180 @@
+/* Apply a dark background to the whole page */
+body {
+    background-color: #000; /* Black background */
+    color: #0f0; /* Green text */
+    font-family: Arial, sans-serif; /* Optional: set a font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style links to be green */
+a {
+    color: #0f0; /* Green text */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Add some padding to the content */
+.container {
+    padding: 20px;
+}
+
+/* Add rounded borders to the main container */
+.App {
+    border: 2px solid #0f0; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; /* Limit the width */
+    background-color: #111; /* Slightly lighter black for contrast */
+}
+
+/* Optional: Style headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #0f0; /* Green headers */
+}
+/* Style the form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align labels and inputs to the left */
+    gap: 10px; /* Add space between form groups */
+}
+
+/* Style the input fields */
+form input {
+    margin-top: 5px; /* Add space above the input field */
+    padding: 5px; /* Add padding inside the input field */
+    border-radius: 5px; /* Rounded corners for input */
+    border: 1px solid #0f0; /* Green border */
+    background-color: #333; /* Dark background */
+    color: #0f0; /* Green text */
+}
+
+/* Style the label */
+form label {
+    font-size: 1rem; /* Adjust font size if needed */
+}
+
+/* Style the login button */
+form button {
+    margin-top: 10px; /* Add space above the button */
+    padding: 10px 20px; /* Add padding to the button */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #0f0; /* Green background */
+    color: #000; /* Black text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+form button:hover {
+    background-color: #0a0; /* Darker green on hover */
+}
+/* Main container for the home page */
+.home-container {
+    display: flex;
+    justify-content: space-between; /* Space between the ads and product column */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+}
+
+/* Left ad column styling */
+.left-ad {
+    flex: 0 0 15%; /* Fixed width for the ad column */
+    background-color: #222; /* Dark background */
+    color: #0f0; /* Green text */
+    border: 2px solid #0f0; /* Green border */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center; /* Center text */
+    position: fixed; /* Fix position to left */
+    left: 20px; /* Adjust distance from the left */
+    top: 0;
+    bottom: 0;
+}
+
+/* Right ad column styling */
+.right-ad {
+    flex: 0 0 15%; /* Fixed width for the ad column */
+    background-color: #222; /* Dark background */
+    color: #0f0; /* Green text */
+    border: 2px solid #0f0; /* Green border */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center; /* Center text */
+    position: fixed; /* Fix position to right */
+    right: 20px; /* Adjust distance from the right */
+    top: 0;
+    bottom: 0;
+}
+
+/* Center product column styling */
+.products-column {
+    flex: 1;
+    margin: 0 20%; /* Adjust to fit between the fixed ad columns */
+    background-color: #111; /* Slightly lighter background for contrast */
+    color: #0f0; /* Green text */
+    border: 2px solid #0f0; /* Green border */
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Product item styling */
+.product-item {
+    margin-bottom: 20px; /* Space between products */
+}
+
+/* Scrollbar styling for the product column */
+.products-column::-webkit-scrollbar {
+    width: 10px;
+}
+
+.products-column::-webkit-scrollbar-thumb {
+    background-color: #0f0; /* Green scrollbar */
+    border-radius: 10px;
+}
+/* Navigation container */
+.nav-container {
+    display: flex;
+    justify-content: space-around; /* Distribute the links evenly */
+    align-items: center; /* Center the nav items vertically */
+    background-color: #111; /* Dark background */
+    padding: 10px 0; /* Padding for spacing */
+    border: 2px solid #0f0; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Margin for spacing around the nav */
+    width: 80%; /* Adjust the width to fit the links */
+}
+
+/* Navigation links */
+.nav-container a {
+    color: #0f0; /* Green text */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    padding: 10px 20px; /* Padding around the links */
+    border: 2px solid transparent; /* Transparent border for spacing */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure links are inline-block elements */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+    flex: 1; /* Make links take equal space */
+    text-align: center; /* Center the text inside each link */
+}
+
+/* Hover effect */
+.nav-container a:hover {
+    background-color: #0f0; /* Green background on hover */
+    color: #111; /* Dark text on hover */
+    border-color: #0f0; /* Green border on hover */
+}
+
+/* Active link (Optional) */
+.nav-container a.active {
+    background-color: #0f0; /* Green background for the active link */
+    color: #111; /* Dark text */
+}

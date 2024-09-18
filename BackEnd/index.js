@@ -3,6 +3,8 @@ const dbConnection = require('./config/database');
 const express = require('express')
 const app = express();
 const cors = require('cors');
+const path = require('path');
+
 dbConnection.then(() => {
     app.use(cors({
         origin: 'http://localhost:3000', // Replace with your frontend URL
@@ -10,6 +12,8 @@ dbConnection.then(() => {
         credentials: true // Allow credentials if needed
       }));
     app.use(express.json())
+    app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
     require('./config/express')(app);
 
     require('./config/routes')(app);
